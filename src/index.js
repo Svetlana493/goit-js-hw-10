@@ -32,6 +32,8 @@ function onFormInput(evt) {
             refs.countryList.innerHTML = "";
             refs.countryInfo.innerHTML = renderCountryInfo(countries);
 
+        } else if (countries.length > 10) {
+            return
         } else {
             refs.countryInfo.innerHTML = "";
             refs.countryList.insertAdjacentHTML("afterbegin", renderCountryList(countries))
