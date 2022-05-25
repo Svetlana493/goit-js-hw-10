@@ -36,7 +36,7 @@ function onFormInput(evt) {
             return
         } else {
             refs.countryInfo.innerHTML = "";
-            refs.countryList.insertAdjacentHTML("afterbegin", renderCountryList(countries))
+            // refs.countryList.insertAdjacentHTML("afterbegin", renderCountryList(countries))
         }
 
 
@@ -44,9 +44,9 @@ function onFormInput(evt) {
 }
 
 
-function renderCountryList(countries) {
-    return countries.map(country => `<li class="countries-list-item"><img src="${country.flags.svg}" width=30 height=20 alt="${country.name.common}"><p class="country-name">${country.name.common}</p></li>`).join("");
-}
+// function renderCountryList(countries) {
+//     return countries.map(country => `<li class="countries-list-item"><img src="${country.flags.svg}" width=30 height=20 alt="${country.name.common}"><p class="country-name">${country.name.common}</p></li>`).join("");
+// }
 
 
 function renderCountryInfo(countries) {
