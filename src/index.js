@@ -14,12 +14,19 @@ const DEBOUNCE_DELAY = 1000;
 
 refs.input.addEventListener("input", debounce(onFormInput, DEBOUNCE_DELAY));
 
-function onFormInput(evt) {
+function clearCountry() {
+    refs.countryList.innerHTML = ``;
+    refs.countryInfo.innerHTML = ``;
+}
 
+
+function onFormInput(evt) {
+    e.preventDefault();
     const value = evt.target.value.trim();
     if (value === "") {
         return
     }
+    clearCountry()
 
 
     fetchCountries(value).then(response => response.json()).then(countries => {
