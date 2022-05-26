@@ -21,12 +21,13 @@ function clearCountry() {
 
 
 function onFormInput(evt) {
-    e.preventDefault();
+    evt.preventDefault();
+    clearCountry();
     const value = evt.target.value.trim();
     if (value === "") {
         return
     }
-    clearCountry()
+
 
 
     fetchCountries(value).then(response => response.json()).then(countries => {
