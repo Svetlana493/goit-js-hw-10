@@ -15,8 +15,8 @@ const DEBOUNCE_DELAY = 1000;
 refs.input.addEventListener("input", debounce(onFormInput, DEBOUNCE_DELAY));
 
 function clearCountry() {
-    refs.countryList.innerHTML = ``;
-    refs.countryInfo.innerHTML = ``;
+    refs.countryList.innerHTML = "";
+    refs.countryInfo.innerHTML = "";
 }
 
 
@@ -27,8 +27,6 @@ function onFormInput(evt) {
     if (value === "") {
         return
     }
-
-
 
     fetchCountries(value).then(response => response.json()).then(countries => {
         shownNotifications(countries)
